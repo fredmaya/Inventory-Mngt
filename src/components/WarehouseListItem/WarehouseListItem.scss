@@ -1,0 +1,175 @@
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+
+.t-row {
+    list-style-type: none;
+    background-color: white;
+    @include px-to-rem("padding", 16px, 24px);
+    border-bottom: 1px solid $cloud;
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+    .data-cell {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+
+
+        @include tablet {
+            flex-direction: row;
+            gap: 3vw;
+        }
+    }
+
+    &--left,
+    &--right {
+        //background-color: green;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .t-data {
+            min-width: 116px;
+
+            &:nth-child(1) {
+                min-height: 80px;
+            }
+
+            &__field {
+                text-transform: uppercase;
+                color: $slate;
+                font-weight: 600;
+                @include px-to-rem("line-height", 16px);
+                @include px-to-rem("font-size", 11px);
+
+                @include tablet {
+                    display: none;
+                    @include px-to-rem("line-height", 22px);
+                    @include px-to-rem("font-size", 14px);
+                }
+            }
+
+            &__value {
+                font-weight: 400;
+                color: #5c667e;
+                width: 111px;
+                @include px-to-rem("line-height", 20px);
+                @include px-to-rem("font-size", 13px);
+
+                @include tablet {
+                    @include px-to-rem("line-height", 22px);
+                    @include px-to-rem("font-size", 14px);
+                    @include px-to-rem("width", 120px);
+                }
+
+                &--highlighted {
+                    font-size: 0.8125rem;
+                    line-height: 1.5em;
+                    color: $instock-indigo;
+
+                    @include tablet {
+                        font-size: 0.875rem;
+                    }
+
+                    .links--icon {
+                        background-image: url("../../assets/images/Icons/chevron_right-24px.svg");
+                        background-repeat: no-repeat;
+                        width: 24px;
+                        height: 24px;
+                        color: $instock-indigo;
+                        font-weight: 600;
+                        padding-right: 2em;
+                    }
+                }
+            }
+
+            //height: 50%;
+            @include tablet {
+                height: inherit;
+
+                &:nth-child(1) {
+                    min-height: unset;
+                }
+            }
+        }
+    }
+
+    &--left {
+        .t-data {
+            width: 50%;
+        }
+    }
+
+    &--right {
+        .t-data {
+            &:nth-child(1) {
+                width: 40%;
+            }
+
+            &:nth-child(2) {
+                width: 60%;
+            }
+        }
+    }
+
+    .t-row--bottom {
+        @include tablet {
+            @include px-to-rem("width", 110px);
+            text-align: center;
+        }
+    }
+}
+
+//  background-image: url("../../assets/icons/delete_outline-24px.
+.warehouse__list--mod {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    @include tablet {
+        flex: none;
+        @include px-to-rem("width", 110px);
+        justify-content: flex-end;
+    }
+
+    .warehouse__icon--right {
+        background-image: url("../../assets/images/Icons/edit-24px-blue.svg");
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @include tablet {
+            margin-left: 1.1em;
+        }
+    }
+
+    .warehouse__icon--left {
+        background-image: url("../../assets/images/Icons/delete_outline-24px.svg");
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

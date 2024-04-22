@@ -1,0 +1,145 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+.label {
+  text-transform: none;
+  color: $instock-black;
+  padding-top: 1.25rem;
+  font-size: 0.813rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.25rem;
+  height: auto;
+
+  &__info {
+    text-transform: none;
+    color: $instock-black;
+    padding-left: 0.5rem;
+  }
+  &__title {
+    font-weight: 600;
+    margin: 0;
+  }
+  &__input {
+    height: 2.25rem;
+    border: none;
+    color: $background_white;
+    color: $cloud;
+    border-radius: 1.25rem;
+    color: $instock-black;
+    border: 1px solid $cloud;
+    padding-left: 1rem;
+    outline: none;
+
+    &::placeholder {
+      color: $slate;
+    }
+    &:focus {
+      border: 1px solid $instock-indigo;
+    }
+    &--resize {
+      padding-top: 0.525rem;
+      height: 2.25rem;
+      border: none;
+      color: $background_white;
+      border-radius: 1.25rem;
+      color: $instock-black;
+      border: 1px solid $cloud;
+      padding-left: 1rem;
+      outline: none;
+      height: 7rem;
+      resize: none;
+    }
+  }
+
+  &__option {
+    width: 100%;
+  }
+  &__select {
+    width: 100%;
+    height: 2.25rem;
+    border: none;
+    color: $background_white;
+
+    border-radius: 1.25rem;
+    color: $instock-black;
+    border: 1px solid $cloud;
+    padding-left: 1rem;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+    background: url('../../assets/images/Icons/arrow_drop_down-24px.svg')
+      no-repeat right #fff;
+    // border: 2px solid #000;
+    &::placeholder {
+      color: $slate;
+    }
+    &:focus {
+      border: 1px solid $instock-indigo;
+      
+    }
+    &--resize {
+      height: 2.25rem;
+      border: none;
+      color: $background_white;
+      border-radius: 1.25rem;
+      color: $instock-black;
+      border: 1px solid $cloud;
+      padding-left: 1rem;
+      outline: none;
+      height: 7rem;
+    }
+  }
+}
+.error {
+  text-transform: none;
+  color: $red;
+  margin: 0;
+  font-size: 12px;
+  display: flex;
+}
+.error_img {
+  padding: 0;
+}
+input:focus:required:invalid + .error {
+  display: flex;
+}
+textarea:focus:required:invalid + .error {
+  display: flex;
+}
+input:focus:required:invalid {
+  border: 1px solid $red;
+}
+textarea:focus:required:invalid {
+  border: 1px solid $red;
+}
+
+select:focus:required:invalid {
+  border: 1px solid $red;
+}
+
+@include tablet {
+  .label {
+    font-size: 0.875rem;
+    &__input {
+      height: 2.375rem;
+      width: auto;
+    }
+    &__input {
+      &--resize {
+        height: 2.25rem;
+        border: none;
+        color: $background_white;
+        border-radius: 1.25rem;
+        color: $instock-black;
+        border: 1px solid $cloud;
+        padding-left: 1rem;
+        outline: none;
+        height: 7rem;
+      }
+    }
+  }
+}

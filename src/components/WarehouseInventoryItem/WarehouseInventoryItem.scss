@@ -1,0 +1,163 @@
+@import "../../styles/partials/global";
+
+section.table-view {
+    display: none;
+    text-transform: uppercase;
+    border-bottom: none;
+    @include tablet {
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        height: 40px;
+        background-color: rgba(247, 248, 249, 0.7);
+    }
+}
+
+.inventory {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1.5em 1.5em;
+    border-top: 1px solid $cloud;
+    background-color: white;
+
+    @include tablet {
+        flex-wrap: nowrap;
+        padding: 0 1.5em;
+        align-items: center;
+        border-top: none;
+        border-bottom: 1px solid $cloud;
+    }
+
+    &__list {
+        margin: 1em 0;
+        width: 50%;
+
+        @include tablet {
+            display: flex;
+            width: 45%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include desktop {
+            width: 40%;
+        }
+    }
+
+    &__list--mod {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include tablet {
+            width: auto;
+            margin-left: auto;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 0.6875rem;
+        margin-bottom: 4px;
+
+        @include tablet {
+            font-size: 0.75rem;
+            line-height: 200%;
+            display: none;
+        }
+    }
+
+    &__item {
+        width: inherit;
+        &--wid {
+            margin-bottom: 1.2em;
+            display: inline-flex;
+            align-items: center;
+            @include tablet {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__links {
+        font-size: 0.8125rem;
+        line-height: 1.5em;
+        color: $instock-indigo;
+
+        // &--mod {
+        //     @include tablet {
+        //         // margin-left: -1.15em;
+        //     }
+        //     @include desktop {
+        //         margin-left: 1em;
+        //     }
+        // }
+
+        @include tablet {
+            font-size: 0.875rem;
+            width: max-content;
+        }
+
+        &--icon {
+            background-image: url("../../assets/images/Icons/chevron_right-24px.svg");
+            background-repeat: no-repeat;
+            width: 24px;
+            height: 24px;
+            color: $instock-indigo;
+            font-weight: 600;
+            display: inline-flex;
+            @include tablet {
+                margin: auto;
+                padding-right: 2em;
+            }
+        }
+
+        &--btn {
+            color: $green;
+            background-color: rgba(21, 132, 99, 0.07);
+            font-size: 0.6875rem;
+            font-weight: 600;
+            width: fit-content;
+            padding: 5px 8px;
+            border-radius: 20px;
+            margin-bottom: 1.5em;
+
+            @include tablet {
+                margin: 0;
+            }
+            // @include desktop {
+            //     margin-left: 3.5em;
+            // }
+        }
+        // &--qty {
+        //     @include tablet {
+        //         padding-left: 1.7em;
+        //     }
+        //     @include desktop {
+        //         margin-left: 4.4em;
+        //     }
+        // }
+    }
+
+    &__icon--right {
+        background-image: url("../../assets/images/Icons/edit-24px-blue.svg");
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+
+        @include tablet {
+            margin-left: 1.1em;
+        }
+    }
+
+    &__icon--left {
+        background-image: url("../../assets/images/Icons/delete_outline-24px.svg");
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.outOfstock {
+    color: #c94515;
+    background-color: rgba(201, 69, 21, 0.07);
+}

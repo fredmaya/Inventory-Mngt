@@ -1,0 +1,155 @@
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+
+.inventory__t-row--mobile {
+    list-style-type: none;
+    background-color: white;
+    @include px-to-rem("padding", 16px, 24px);
+    border-bottom: 1px solid $cloud;
+    display: flex;
+    flex-direction: column;
+
+
+
+    @include tablet {
+        display: none;
+
+    }
+
+
+    .data-cell {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 3vw;
+        }
+    }
+
+}
+
+
+.t-data__value--inStock {
+    background: rgba(21, 132, 99, 0.07);
+    border-radius: 20px;
+    color: $green;
+    height: 24px;
+    padding: 0 8px;
+    width: 100%;
+    font-size: 13px;
+    text-wrap: nowrap;
+
+
+
+    @include tablet {
+        height: 26px;
+        font-size: 14px;
+    }
+}
+
+.t-data__value--outStock {
+    background: rgba(201, 69, 21, 0.07);
+    border-radius: 20px;
+    color: $red;
+    height: 24px;
+    padding: 0 8px;
+    width: 100%;
+    font-size: 13px;
+    text-wrap: nowrap;
+
+    @include tablet {
+        height: 26px;
+        font-size: 14px;
+    }
+}
+
+.t-data__value--qtd {
+    margin-bottom: 10px;
+    font-size: 13px;
+
+    @include tablet {
+        font-size: 14px;
+
+    }
+
+
+
+    @include desktop {
+        margin-bottom: 0;
+    }
+}
+
+
+
+.inventory-details__block--sts {
+    display: inline-block;
+
+}
+
+
+
+.inventory__t-row--tablet {
+    display: none;
+
+
+    @include tablet {
+
+        background-color: white;
+        @include px-to-rem("padding", 16px, 24px);
+        border-bottom: 1px solid $cloud;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 14px;
+        justify-content: space-between;
+        align-items: center;
+
+
+
+
+        & .inventory__t-row--left,
+        .inventory__t-row--left1,
+        .inventory__t-row--right,
+        .inventory__t-row--last,
+        .inventory--status--block {
+
+            flex: 1;
+            width: 100px;
+
+
+        }
+
+        & .inventory--status {
+            display: inline-block;
+
+        }
+
+        & .inventory__t-row--left1 p {
+
+            color: $instock-indigo;
+        }
+
+
+        & .inventory__icon--right:hover,
+        .inventory__icon--left:hover {
+            cursor: pointer;
+        }
+
+
+    }
+}
+
+.links--icon {
+    background-image: url("../../assets/images/Icons/chevron_right-24px.svg");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    color: $instock-indigo;
+    font-weight: 600;
+    padding-right: 2em;
+
+
+}

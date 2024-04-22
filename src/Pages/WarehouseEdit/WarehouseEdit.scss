@@ -1,0 +1,21 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/typography.scss' as*;
+
+.edit-section{
+    position: relative;
+    bottom: 6vh;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(19, 24, 18, 0.1);
+    position: relative;
+    border-radius: 1px;
+    margin: 0 auto;
+    // min-width: 320px;
+    // max-width: 1280px;
+    margin: auto;
+    margin: 0 2em;
+    @include desktop {
+        width: 75%;
+        margin: auto;
+    }
+}

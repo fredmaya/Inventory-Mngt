@@ -1,0 +1,26 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/typography.scss' as*;
+
+.add-inventory{
+    position: relative;
+    bottom: 6vh;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(19, 24, 18, 0.1);
+    position: relative;
+    border-radius: 1px;
+    margin: 0 auto;
+    margin: auto;
+    margin: 0 2em;
+    @include desktop {
+        width: 75%;
+        margin: auto;
+    }
+    
+}
+.error-name,.error-name1{
+    @include text-styles(10, 20, 400);
+    text-transform: none;
+    color: $red;
+    font-size: 0.813rem;
+}

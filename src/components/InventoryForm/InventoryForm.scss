@@ -1,0 +1,127 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+
+.item-form {
+  &__primary {
+    margin-left: 0;
+  }
+
+  &__container {
+    border-top: 1px solid $cloud;
+    margin-bottom: 1.563rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  &__container-buttons {
+    display: flex;
+    flex-direction: row;
+    background: $light-grey;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  &__title {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  &__radio {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  &__radio-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.813rem;
+    
+  }
+
+///
+
+ 
+}
+
+
+.label__info {
+  display: inline-flex;
+  gap: 1.25rem;
+  color: $slate;
+
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label:before {
+
+  content: "";
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 5px;
+  background-clip: content-box;
+  border: 1px solid $cloud;
+  background-color: $background_white;
+  border-radius: 50%;
+  
+}
+
+input[type="radio"]:checked + label:before {
+  
+  background-color: $instock-indigo;
+  border: 1px solid $instock-indigo;
+  font-weight: 700;
+  
+}
+
+input[type="radio"]:checked + label{
+
+  color: $instock-black;
+}
+
+input[type="radio"]:checked+label:after {
+  color: $instock-black;
+}
+
+
+@include tablet {
+  .item-form {
+    &__primary {
+      margin-right: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid $cloud;
+    }
+    &__container {
+      border-top: none;
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
+    &__border {
+      border-right: 1px solid $cloud;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    &__container-buttons {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@include desktop {
+  .item-form {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+
+    &__primary {
+      width: auto;
+    }
+    &__container {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

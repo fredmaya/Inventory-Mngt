@@ -1,0 +1,104 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/typography.scss' as*;
+
+.navBar {
+    background-color: $graphite;
+    height: 12.5rem;
+
+    @include tablet {
+        height: 11.625rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+
+        @include tablet {
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.25em 0 2em;
+        }
+
+        @include desktop {
+            width: 80%;
+            margin: auto;
+        }
+    }
+
+    &__logo-container {
+        width: 100%;
+        padding: 1.5em 0;
+
+        @include tablet {
+            width: auto;
+            padding: 2em 0;
+        }
+    }
+
+    &__logo {
+        background-image: url("../../assets/images/Logo/InStock-Logo.svg");
+        height: 1.75rem;
+        width: 8rem;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__block {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        a {
+            border-radius: 20px;
+            text-align: center;
+
+            &:hover {
+                color: #ffffff;
+                background-color: #13182c;
+            }
+        }
+
+        @include tablet {
+            justify-content: end;
+        }
+    }
+
+    &__text {
+        width: 50%;
+        color: #bdc5d5;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        padding: 0.8125em;
+        margin: 0 1.2em;
+
+        @include tablet {
+            width: auto;
+            margin: 0;
+            padding: 0.7em 0.91em;
+            font-size: 0.875rem;
+        }
+    }
+
+    .navBar__Link {
+        display: flex;
+        border-radius: 20px;
+        text-align: center;
+        justify-content: center;
+        width: 164px;
+
+        @include tablet {
+            width: 107px;
+        }
+
+        &:hover {
+            color: #ffffff;
+            background-color: $instock-black;
+            justify-content: center;
+        }
+    }
+}
